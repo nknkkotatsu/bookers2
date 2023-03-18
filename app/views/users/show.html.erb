@@ -1,2 +1,24 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div>
+  <%#= image_tag @user.get_profile_image(100,100) %>
+  <h3>"name"<%= @user.name %></h3>
+</div>
+
+<!-- ユーザーの投稿一覧 -->
+
+<% @books.each do |book| %>
+<div>
+  <table>
+    <tr>
+      <td><%#= image_tag book.user.image. %></td>
+      <td><%= link_to book.user.name, user_path(book.user) %></td>
+      <td><%= book.title %></td>
+      <td><%= book.body %></td>
+      <% if book.user == current_user %>
+        <%= link_to "Edit", edit_book_path(book.id) %>
+        <%= link_to "Destroy", book_path(book),method: :delete %>
+      <% end %>
+    </tr>
+  </table>
+
+</div>
+<% end %>
