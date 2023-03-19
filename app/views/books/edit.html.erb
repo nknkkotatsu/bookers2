@@ -1,10 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
 <h1>Editing Book</h1>
+
 <%= form_with model: @book do |f| %>
   <label for="inputTitle">Title</label>
   <%= f.text_field :title %>
   <label for="inputBody">Opinion</label>
   <%= f.text_field :body %>  
-  <%= f.submit "Update Book" %>
+  <div class="form-group">
+    <input type="submit" name="commit" value="Update Book" class="btn btn-success" data-disable-with="Update Book">
+  </div>
 <% end %>
-<%= link_to "Show", book_path(@book.id) %>
-<%= link_to "Back", books_path %>
+
+<a class="book_68242" href="<%= book_path(@book.id) %>">Show</a> |
+<a class="back" href="/books">Back</a>
+  </div>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+  		<h1>Editing Book</h1>
+    	
+  		<form action="/books/68242" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="patch" autocomplete="off"><input type="hidden" name="authenticity_token" value="sO_QOv1gfOhdxCMPrr8Px5TKpUfQttHSwl9eAJhKcSVq9kfiEo7Pi4V3OuDp-QrJ0d1mv-Q-MLXKojonAhzXCg" autocomplete="off">
+  <div class="form-group">
+    <label for="book_title">Title</label>
+    <input class="form-control book_title" type="text" value="aa" name="book[title]" id="book_title">
+  </div>
+  <div class="form-group">
+    <label for="book_opinion">Opinion</label>
+    <textarea class="form-control book_body" name="book[body]" id="book_body">zz</textarea>
+  </div>
+  <div class="form-group">
+    <input type="submit" name="commit" value="Update Book" class="btn btn-success" data-disable-with="Update Book">
+  </div>
+</form>
+  		<a class="book_68242" href="/books/68242">Show</a> |
+  		<a class="back" href="/books">Back</a>
+  </div>
+</div>
