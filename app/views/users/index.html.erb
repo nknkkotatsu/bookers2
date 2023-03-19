@@ -1,23 +1,14 @@
-<div>
-  
-  <h3>name <%= @user.name %></h3>
-  <p><%= link_to "プロフィール編集", edit_user_path %></p>
-</div>
-
+<%= render 'info', user:@user %>
+<%= render 'books/create', books:@books %>
 <!-- ユーザーの投稿一覧 -->
 
-<% @books.each do |book| %>
+<% @users.each do |user| %>
 <div>
   <table>
     <tr>
-      <td><%= image_tag @user.get_profile_image(100,100) %></td>
-      <td><%= link_to book.user.name, user_path(book.user) %></td>
-      <td><%= book.title %></td>
-      <td><%= book.body %></td>
-      <% if book.user == current_user %>
-        <%= link_to "Edit", edit_book_path(book.id) %>
-        <%= link_to "Destroy", book_path(book),method: :delete %>
-      <% end %>
+      <td><%= image_tag user.get_profile_image(100,100) %></td>
+      <td><%= link_to user.name, user_path(user.id) %></td>
+
     </tr>
   </table>
 

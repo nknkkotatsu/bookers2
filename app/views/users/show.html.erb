@@ -1,3 +1,7 @@
+<%= render 'info', user:@user %>
+<%= render 'books/create', books:@books %>
+
+
 <div>
   <%= image_tag @user.get_profile_image(100,100) %>
   <h3>name <%= @user.name %></h3>
@@ -10,7 +14,7 @@
 <div>
   <table>
     <tr>
-      <td><%#= image_tag book.user.image. %></td>
+      <td><%= image_tag @user.get_profile_image(100,100) %></td>
       <td><%= link_to book.user.name, user_path(book.user) %></td>
       <td><%= book.title %></td>
       <td><%= book.body %></td>
