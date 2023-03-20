@@ -1,6 +1,23 @@
-<div>
-  <h1>User info</h1>
-  <%= image_tag user.get_profile_image(100,100) %>
-  <h3>name <%= user.name %></h3>
-  <p><%= link_to "プロフィール編集", edit_user_path(current_user.id) %></p>
-</div>
+<table class="table table-user">
+  <h3>User info</h3>
+  <thead>
+    <tr>
+      <%= image_tag user.get_profile_image(100,100) %>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Name</th>
+      <th><%= user.name %></th>
+    </tr>
+    <tr>
+      <th>Introduction</th>
+      <th><%= user.introduction %></th>
+    </tr>
+    <tr>
+      <th colspan="2">
+  <%= link_to "プロフィール編集", edit_user_path(current_user.id) %>
+      </th>
+    </tr>
+  </tbody>
+</table>

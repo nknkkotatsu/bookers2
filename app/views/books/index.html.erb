@@ -1,11 +1,15 @@
+<div>
+  <%= flash[:notice] %>
+</div>
+
 <div class="container">
  <div class="row">
    <div class="col-md-3">
-     <%= render 'users/info', user:@user %>
-     <%= render 'create', books:@book %>
+     <%= render 'users/info', user: @user %>
+     <%= render 'create', books: @book %>
    </div>
 <div class="col-md-8 offset-md-1">
-<h1>Books</h1>
+<h3>Books</h3>
  <table>
    <thead>
      <tr>
